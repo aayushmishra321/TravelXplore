@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
 
@@ -7,6 +8,12 @@ function Explore() {
     useEffect(() => {
         document.title = "TravelXplore | Explore"; // Change the title
       }, []);
+
+      const navigate = useNavigate();
+      const handleBookNow = () => {
+        navigate("/booking"); // Replace with the correct path to your booking page
+      };
+    
   return (
     <div>
       <Navbar />
@@ -50,7 +57,7 @@ function Explore() {
                   Fingerstache flexitarian street art 8-bit waistcoat.
                   Distillery hexagon disrupt edison bulbche.
                 </p>
-                <button class="inline-flex text-white bg-blue-500 border-0 py-1 px-4 mt-3 rounded focus:outline-none hover:bg-blue-700 transition-colors">
+                <button onClick={handleBookNow} class="inline-flex text-white bg-blue-500 border-0 py-1 px-4 mt-3 rounded focus:outline-none hover:bg-blue-700 transition-colors">
                   Book Now
                 </button>
               </div>

@@ -7,6 +7,10 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Services from './components/Services/Services';
 import Explore from './components/Explore/Explore';
+import BookingForm from './components/BookingPage/BookingForm';
+import FlightBookingPage from './components/BookingPage/FlightBookingForm';
+import RailwayBookingPage from './components/BookingPage/RailwayBookingForm';
+// import RailwayBooking from './components/BookingPage/RailwayBooking';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -36,6 +40,18 @@ const router = createBrowserRouter([
   {
     path: "explore",
     element: <Explore />,
+  },
+  {
+    path: "/booking",
+    element: <BookingForm />,
+  },
+  {
+    path: "/flight-booking",
+    element: <FlightBookingPage />,
+  },
+  {
+    path: "/railway-booking",
+    element: <RailwayBookingPage />,
   },
 ]);
 

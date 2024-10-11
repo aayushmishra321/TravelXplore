@@ -1,11 +1,39 @@
-import React from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink instead of Link
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the page is scrolled more than 50px
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <header className="text-gray-600 body-font border-b">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center fixed z-50 bg-white">
+      <header
+        className={`${
+          isScrolled
+            ? "shadow-lg rounded-lg p-3 mt-4 mx-4"
+            : "p-5"
+        } fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+        style={{ backgroundColor: "#f8f8f8" }}
+      >
+        <div className="container mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <NavLink
             to="/home"
             className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
@@ -73,41 +101,52 @@ function Navbar() {
             >
               Contact Us
             </NavLink>
-            <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap items-end md:justify-end">
-              <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                <input
-                  type="text"
-                  id="footer-field"
-                  placeholder="Search"
-                  name="footer-field"
-                  class="w-full bg-gray-100 bg-opacity-50 border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out rounded-3xl"
-                />
-              </div>
-              <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded-3xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 20"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  />
-                </svg>
-                Search
-              </button>
-            </div>
           </nav>
+          <div className="relative mx-4 flex items-center hidden md:flex">
+            <input
+              type="text"
+              className="bg-gray-100 rounded-full py-2 px-4 pl-10 focus:outline-none focus:bg-white focus:shadow-md"
+            />
+            <svg
+              className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+            <button className="ml-2 bg-blue-500 text-white rounded-full py-2 px-4 focus:outline-none hover:bg-blue-700">
+              Search
+            </button>
+          </div>
           <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-3xl text-base mt-4 md:mt-0 mr-2">
             Log In
           </button>
           <button className="inline-flex items-center bg-blue-450 border-0 py-1 px-3 focus:outline-none hover:bg-blue-700 bg-blue-800 text-white mt-4 md:mt-0 mr-2 rounded-3xl">
             Sign Up
           </button>
+          <div className="md:hidden flex items-center">
+            <svg
+              className="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </div>
         </div>
       </header>
     </div>

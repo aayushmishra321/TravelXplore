@@ -11,14 +11,17 @@ function About() {
     <div>
       <Navbar />
       <section class="text-gray-600 body-font">
-        <img
-          src="https://i.imghippo.com/files/c2u301727849163.jpg"
-          alt="background"
-          className="w-full h-[65vh] object-cover relative"
-        />
-        <div className="absolute text-white text-center text-7xl font-bold top-52 left-96 mx-60">
-          <h3>About Us</h3>
+        <div className="relative">
+          <img
+            src="https://i.imghippo.com/files/c2u301727849163.jpg"
+            alt="background"
+            className="w-full h-[50vh] md:h-[65vh] object-cover"
+          />
+          <div className="absolute text-white text-center font-bold top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 md:text-7xl text-3xl">
+            <h3>About Us</h3>
+          </div>
         </div>
+
         <div class="container px-5 py-10 mx-auto">
           <div class="flex flex-col text-center w-full mb-10">
             <h2 class="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">
@@ -177,7 +180,10 @@ function About() {
                       UI Designer & Front-End Developer
                     </h3>
                     <p className="mb-4">
-                      Prem brings creativity and user-centered design to the team, ensuring that TravelXplore is not only functional but also aesthetically pleasing. Their focus on intuitive design helps users navigate the platform effortlessly.
+                      Prem brings creativity and user-centered design to the
+                      team, ensuring that TravelXplore is not only functional
+                      but also aesthetically pleasing. Their focus on intuitive
+                      design helps users navigate the platform effortlessly.
                     </p>
                     <span className="inline-flex">
                       <a className="text-gray-500">
@@ -236,7 +242,9 @@ function About() {
                     </h2>
                     <h3 className="text-gray-500 mb-3">Front-End Developer</h3>
                     <p className="mb-4">
-                    Aayush focuses on building the user interface of TravelXplore, ensuring a smooth and visually appealing experience with their expertise in HTML, CSS, and React.
+                      Aayush focuses on building the user interface of
+                      TravelXplore, ensuring a smooth and visually appealing
+                      experience with their expertise in HTML, CSS, and React.
                     </p>
                     <span className="inline-flex">
                       <a className="text-gray-500">
@@ -295,7 +303,11 @@ function About() {
                     </h2>
                     <h3 className="text-gray-500 mb-3">Back-End Developer</h3>
                     <p className="mb-4">
-                      Ubai is responsible for managing the back-end infrastructure of TravelXplore. With expertise in Node.js and Express, they work tirelessly to ensure that our platform runs smoothly, handling data securely and efficiently.
+                      Ubai is responsible for managing the back-end
+                      infrastructure of TravelXplore. With expertise in Node.js
+                      and Express, they work tirelessly to ensure that our
+                      platform runs smoothly, handling data securely and
+                      efficiently.
                     </p>
                     <span className="inline-flex">
                       <a className="text-gray-500">
@@ -354,7 +366,9 @@ function About() {
                     </h2>
                     <h3 className="text-gray-500 mb-3">Back-End Developer</h3>
                     <p className="mb-4">
-                    Pawan is a versatile full-stack developer, contributing to both the front-end and back-end of TravelXplore, ensuring the platform’s reliability and performance.
+                      Pawan is a versatile full-stack developer, contributing to
+                      both the front-end and back-end of TravelXplore, ensuring
+                      the platform’s reliability and performance.
                     </p>
                     <span className="inline-flex">
                       <a className="text-gray-500">
