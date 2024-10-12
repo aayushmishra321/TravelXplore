@@ -7,6 +7,7 @@ import MostVisited from "./MostVisited/MostVisited";
 import Testimonials from "./MostVisited/Testimonials";
 import Footer from "./Footer/Footer";
 import { useEffect } from "react";
+import { useNavigate } from "react-router"
 
 const slides = [
     "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -14,10 +15,12 @@ const slides = [
     "https://images.unsplash.com/photo-1712388430474-ace0c16051e2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
     
-function Home(){
-    useEffect(() => {
-        document.title = "TravelXplore | Home"; // Change the title
-      }, []);
+function Home() {
+    const navigate = useNavigate(); // Initialize navigate
+  
+    const handleBookNow = () => {
+      navigate("/booking"); // Replace with the correct path to your booking page
+    };
     return(
         <div>
             <Navbar />
